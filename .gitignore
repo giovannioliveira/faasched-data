@@ -1,0 +1,3 @@
+venv/
+.virtual_documents/
+.jupyter_ystore.db
