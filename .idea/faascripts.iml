@@ -15,6 +15,7 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/datasci/src" />
+        <option value="$MODULE_DIR$/datasci/notebooks" />
       </list>
     </option>
   </component>

@@ -1,4 +1,0 @@
-numpy
-pandas
-jupyter_server
-urllib3
