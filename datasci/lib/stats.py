@@ -18,3 +18,8 @@ def pdf_from_samples(xs: np.ndarray, xl: float = None, xr: float = None, n_sampl
     X_d.sort()
     Y_d = np.exp(kde.score_samples(X_d.reshape(-1, 1))).reshape(len(X_d))
     return X_d, Y_d, kde
+
+
+def cdf_from_pdf(xs: np.ndarray, ys: np.ndarray):
+    ret = np.cumsum(np.append(0,np.vectorize(lambda i: (xs[i+1] - xs[i])*(ys[i+1] + ys[i])/2)(range(len(xs)-1))))
+    return ret/ret[-1]
