@@ -2,8 +2,12 @@ import numpy as np
 from sklearn.neighbors import KernelDensity
 
 
-def pdf_from_samples(xs: np.ndarray, xl: float, xr: float, n_samples: int, kernel='tophat', bandwidth='silverman',
-                     random_state=None) -> (np.ndarray, np.ndarray, KernelDensity):
+def pdf_from_samples(xs: np.ndarray, xl: float = None, xr: float = None, n_samples: int = 100, kernel='gaussian',
+                     bandwidth='silverman', random_state=None) -> (np.ndarray, np.ndarray, KernelDensity):
+    if xl is None:
+        xl = min(xs)
+    if xr is None:
+        xr = max(xs)
     kde = KernelDensity(bandwidth=bandwidth, kernel=kernel).fit(xs.reshape(-1, 1))
     X_d = np.array([])
     while len(X_d) < n_samples:
