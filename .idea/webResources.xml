@@ -7,6 +7,8 @@
           <resourceRoots>
             <path value="file://$PROJECT_DIR$/venv" />
             <path value="file://$PROJECT_DIR$/datasci/output" />
+            <path value="file://$PROJECT_DIR$/datasci/venv" />
+            <path value="file://$PROJECT_DIR$/datasci/data" />
           </resourceRoots>
         </entryData>
       </entry>
